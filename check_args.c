@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/19 09:15:56 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/19 11:51:36 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	check_numbers(char **av)
 		}
 		else
 			temp = ft_atoi(av[i]);
+			add_lst();
 		i++;
 	}
 }
