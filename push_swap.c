@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/19 08:58:06 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/19 13:38:58 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 int	main(int ac, char **av)
 {
+	t_info	*info;
+
+	info = malloc(sizeof(t_info));
 	if (ac == 2)
 	{
 		av = ft_split(av[1], ' ');
 		print_split(av); //don't need it but just to see
 		is_alpha(av);
-		check_numbers(av);
+		check_numbers(av, info);
 	}
 	if (ac > 2)
 	{
 		av++;
 		print_split(av); //don't need it. just to see
 		is_alpha(av);
-		check_numbers(av);
+		check_numbers(av, info);
 	}
 	return (0);
 }

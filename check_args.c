@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/19 11:51:36 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/19 13:50:58 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@ void	is_alpha(char **av)
 }
 
 //to check if there are only INT
-void	check_numbers(char **av)
+void	check_numbers(char **av, t_info *info)
 {
-	int	i;
-	int	temp;
+	int		i;
+	int		temp;
 
 	i = 0;
+	info->head_a = NULL;
 	while (av[i])
 	{
 		if (ft_strlen(av[i]) >= 11)
@@ -56,11 +57,14 @@ void	check_numbers(char **av)
 			exit (0);
 		}
 		else
+		{
 			temp = ft_atoi(av[i]);
-			add_lst();
+			add_lst(info->head_a, lst_new(temp));
+		}
 		i++;
 	}
 }
+//takes pointeur sur le premier, et fonction lstnew de temp ^
 
 //void	check_doublons()
 //don't forget to get rid of this function. Just for me at this point
