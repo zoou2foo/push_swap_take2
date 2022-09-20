@@ -6,45 +6,30 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/19 14:43:41 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/20 11:41:58 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*lst_last(t_info *info)
+void	fill_lst(t_stack *stack_a)
 {
-	t_stack	*first;
+	int		i;
+	t_stack	*head_a;
+	int		*tmp;
 
-	first = info->head_a;
-	while (first->next != first)
+	i = 0;
+	head_a = stack_a;
+	tmp = stack_a->temp;
+	if (check_doubles(tmp))
+		return ;
+	while (tmp[i])
 	{
-		if (first->next == NULL)
-			return (first);
+		stack_a->value = tmp[i];
+		stack_a = stack_a->next;
+		stack_a = malloc(sizeof(t_stack));
+		i++;
 	}
-	return (first);
+	stack_a->next = head_a;
 }
-
-void	add_lst(t_info *info, t_stack *temp)
-{
-	t_stack	*last;
-
-	last = lst_last(info->head_a);
-	info->head_a->previous = temp;
-	last->next = temp;
-	temp->next = info->head_a;
-	temp->previous = last;
-	printf("node added: %d\n", temp->value);
-}
-
-t_stack	*lst_new(int temp)
-{
-	t_stack	*node;
-
-	node = ft_calloc(1, sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->value = temp;
-	node->next = NULL;
-	return (node);
-}
+//^peut-être node de trop de malloc

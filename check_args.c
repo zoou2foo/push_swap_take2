@@ -6,13 +6,13 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/19 13:50:58 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/20 14:52:59 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//to check if there are letters in the args
+//to check if there are letters in the args. Je veux peut-être le faire avec chiffres
 void	is_alpha(char **av)
 {
 	int	i;
@@ -37,13 +37,12 @@ void	is_alpha(char **av)
 }
 
 //to check if there are only INT
-void	check_numbers(char **av, t_info *info)
+void	check_numbers(char **av, t_stack *stack_a, int array_size)
 {
 	int		i;
-	int		temp;
 
 	i = 0;
-	info->head_a = NULL;
+	stack_a->temp = ft_calloc(sizeof(int), array_size);
 	while (av[i])
 	{
 		if (ft_strlen(av[i]) >= 11)
@@ -57,17 +56,35 @@ void	check_numbers(char **av, t_info *info)
 			exit (0);
 		}
 		else
-		{
-			temp = ft_atoi(av[i]);
-			add_lst(info->head_a, lst_new(temp));
-		}
+			stack_a->temp[i] = ft_atoi(av[i]);
 		i++;
 	}
 }
-//takes pointeur sur le premier, et fonction lstnew de temp ^
 
-//void	check_doublons()
-//don't forget to get rid of this function. Just for me at this point
+//to check if there are doubles
+int	check_doubles(int *array)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (array[i])
+	{
+		j = 0;
+		while (array[j])
+		{
+			if (array[i] == array[j])
+			{
+				write(2, "Error\n", 6);
+				return (1);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	print_split(char **av)
 {
 	int	i;
@@ -79,3 +96,4 @@ void	print_split(char **av)
 		i++;
 	}
 }
+//^don't forget to get rid of this function. Just for me at this point^

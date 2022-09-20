@@ -6,13 +6,13 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/09/19 11:21:01 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/20 09:22:39 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = push_swap.c check_args.c create_n_deal_list.c\
+SRCS = push_swap.c check_args.c create_n_deal_list.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a
