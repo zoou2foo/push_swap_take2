@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/20 14:52:59 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/21 13:44:07 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,11 @@ void	is_alpha(char **av)
 }
 
 //to check if there are only INT
-void	check_numbers(char **av, t_stack *stack_a, int array_size)
+void	check_numbers(char **av)
 {
 	int		i;
 
 	i = 0;
-	stack_a->temp = ft_calloc(sizeof(int), array_size);
 	while (av[i])
 	{
 		if (ft_strlen(av[i]) >= 11)
@@ -55,32 +54,31 @@ void	check_numbers(char **av, t_stack *stack_a, int array_size)
 			write(2, "Error\n", 6);
 			exit (0);
 		}
-		else
-			stack_a->temp[i] = ft_atoi(av[i]);
 		i++;
 	}
 }
 
 //to check if there are doubles
-int	check_doubles(int *array)
+int	check_doubles(t_stack *stack_a)
 {
-	int	i;
-	int	j;
+	t_stack *head_a;
+	t_stack *beginning;
 
-	i = 0;
-	while (array[i])
+	head_a = stack_a;
+	beginning = stack_a;
+	while (head_a)
 	{
-		j = 0;
-		while (array[j])
+		while (stack_a)
 		{
-			if (array[i] == array[j])
+			if (stack_a->value == head_a->value && stack_a != head_a)
 			{
-				write(2, "Error\n", 6);
+				write(2, "Error\n", 7);
 				return (1);
 			}
-			j++;
+			stack_a = stack_a->next;
 		}
-		i++;
+		stack_a = beginning;
+		head_a = head_a->next;
 	}
 	return (0);
 }

@@ -6,30 +6,50 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/20 11:41:58 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/21 13:28:55 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	fill_lst(t_stack *stack_a)
+void	free_node(t_stack *stack_a)
 {
-	int		i;
-	t_stack	*head_a;
-	int		*tmp;
+	t_stack	*tempo;
+
+	while (stack_a)
+	{
+		tempo = stack_a->next;
+		free (stack_a);
+		tempo = stack_a;
+	}
+}
+
+void	fill_lst(char **av, t_stack *stack_a)
+{
+	int	i;
 
 	i = 0;
-	head_a = stack_a;
-	tmp = stack_a->temp;
-	if (check_doubles(tmp))
-		return ;
-	while (tmp[i])
+	while (av[i])
 	{
-		stack_a->value = tmp[i];
-		stack_a = stack_a->next;
-		stack_a = malloc(sizeof(t_stack));
-		i++;
+		stack_a->value = ft_atoi(av[i]); //met av[i] dans ma liste
+		i++; //on incrémente pour voir le prochain
+		if (av[i] != NULL)
+		{
+			stack_a->next = malloc(sizeof(t_stack));
+			stack_a = stack_a->next; //incrément de ta liste
+		}
 	}
-	stack_a->next = head_a;
 }
-//^peut-être node de trop de malloc
+
+/*int	lstsize(t_stack *stack_a)
+{
+	stack_a->size_max = 1;
+	if (!stack_a)
+		return (0);
+	while (stack_a->next != NULL)
+	{
+		stack_a->size_max++;
+		stack_a = stack_a->next;
+	}
+	return (stack_a);
+}*/

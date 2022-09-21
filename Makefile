@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/09/20 09:22:39 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/21 11:33:10 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ CC = gcc #le compilateur à utiliser
 
 CFLAGS = -g -Wall -Wextra -Werror
 
+ARGS = 778 34 1 89 
+#ARGS = "778 34 1 89" 
+
 .c.o:
 	@$(CC)$(CFLAGS) -c $< -o $(<:.c=.o)
 
@@ -38,6 +41,8 @@ $(NAME): $(OBJS)
 	cd libft && make
 	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
+exec: $(NAME)
+	valgrind --leak-check=full ./push_swap $(ARGS)
 
 clean:
 	$(RM) $(OBJS)

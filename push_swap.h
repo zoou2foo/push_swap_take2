@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/20 14:54:27 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/21 13:43:46 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_stack{
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
-	int				*temp;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -44,12 +43,14 @@ typedef struct s_stack{
 
 /* check arguments */
 void	is_alpha(char **av);
-void	check_numbers(char **av, t_stack *stack_a, int array_size);
-int		array_size(char **av);
-int		check_doubles(int *array);
+void	check_numbers(char **av);
+int		check_doubles(t_stack *stack_a);
 
 /* to deal with linked list */
-void	fill_lst(t_stack *stack_a);
+void	fill_lst(char **av, t_stack *stack_a);
+
+/* Yeah I'm free! Free fallin'!! */
+void	free_node(t_stack *stack_a);
 
 /* useless functions. Just to help me */
 void	print_split(char **av);
