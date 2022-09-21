@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/21 13:28:55 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/21 14:42:37 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	free_node(t_stack *stack_a)
 	{
 		tempo = stack_a->next;
 		free (stack_a);
-		tempo = stack_a;
+		stack_a = tempo;
 	}
 }
 
@@ -35,9 +35,11 @@ void	fill_lst(char **av, t_stack *stack_a)
 		i++; //on incrémente pour voir le prochain
 		if (av[i] != NULL)
 		{
-			stack_a->next = malloc(sizeof(t_stack));
+			stack_a->next = ft_calloc(sizeof(t_stack), 1);
 			stack_a = stack_a->next; //incrément de ta liste
 		}
+		else
+			stack_a->next = NULL;
 	}
 }
 
