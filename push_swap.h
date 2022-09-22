@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/21 14:42:22 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/22 12:16:48 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ int		check_doubles(t_stack *stack_a);
 
 /* to deal with linked list */
 void	fill_lst(char **av, t_stack *stack_a);
+void	check_if_sorted(t_stack *stack_a);
+void	setup_index(t_stack *stack_a);
+int		lstsize(t_stack *stack_a);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

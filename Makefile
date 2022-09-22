@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/09/21 11:33:10 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/22 11:55:44 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ ARGS = 778 34 1 89
 #ARGS = "778 34 1 89" 
 
 .c.o:
-	@$(CC)$(CFLAGS) -c $< -o $(<:.c=.o)
+		@$(CC)$(CFLAGS) -c $< -o $(<:.c=.o)
 
 #AR = ar rcs
 
@@ -39,7 +39,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	cd libft && make
-	@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
+		@$(CC) $(OBJS) $(LIBFT) -o $(NAME)
 
 exec: $(NAME)
 	valgrind --leak-check=full ./push_swap $(ARGS)

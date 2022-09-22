@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/05 08:45:10 by vjean             #+#    #+#              #
-#    Updated: 2022/09/14 11:04:24 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/22 11:55:13 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalnum.c ft_isalpha.c ft_isascii.c\
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 AR = ar rcs
 
@@ -34,10 +34,13 @@ OBJS = $(SRCS:%c=%o)
 
 BONUS_OBJS = $(BONUS:.c=.o)
 
+.c.o:
+		@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+		@ar rcs $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS) 
