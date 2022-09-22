@@ -6,8 +6,16 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:54:36 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/22 07:55:39 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/22 14:28:16 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	do_pb(t_stack *stack_a)
+{
+	t_stack	*stack_b;
+	t_stack	*tempo;
+
+	tempo = stack_a
+}
