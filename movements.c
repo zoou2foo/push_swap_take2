@@ -6,13 +6,13 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 07:54:36 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/23 11:28:55 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/23 11:32:56 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	do_pb(t_stack *stack_a)
+void	do_pb(t_stack **stack_a)
 {
 	t_stack	**stack_b;
 	t_stack	*head_a;

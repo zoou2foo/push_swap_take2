@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/22 07:59:31 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/23 11:42:45 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	check_numbers(char **av)
 }
 
 //to check if there are doubles
-int	check_doubles(t_stack *stack_a)
+int	check_doubles(t_stack **stack_a)
 {
 	t_stack	*head_a;
 	t_stack	*beginning;
@@ -70,12 +70,12 @@ int	check_doubles(t_stack *stack_a)
 	{
 		while (stack_a)
 		{
-			if (stack_a->value == head_a->value && stack_a != head_a)
+			if ((*stack_a)->value == head_a->value && stack_a != head_a)
 			{
 				write(2, "Error\n", 7);
 				return (1);
 			}
-			stack_a = stack_a->next;
+			stack_a = (*stack_a)->next;
 		}
 		stack_a = beginning;
 		head_a = head_a->next;
