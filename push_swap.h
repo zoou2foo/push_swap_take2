@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/22 14:13:16 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/23 11:30:13 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	setup_index(t_stack *stack_a);
 int		lstsize(t_stack *stack_a);
 
 /* all about the movements */
-void	do_pa(t_stack *stack_a);
+//void	do_pb(t_stack *stack_a);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

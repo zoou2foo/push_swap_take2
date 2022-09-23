@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/22 14:02:12 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/23 11:30:23 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 		check_doubles(stack_a);
 		check_if_sorted(stack_a);
 		setup_index(stack_a);
+		//do_pb(stack_a);
 	}
 	if (ac > 2)
 	{
@@ -38,6 +39,7 @@ int	main(int ac, char **av)
 		check_doubles(stack_a);
 		check_if_sorted(stack_a);
 		setup_index(stack_a);
+		//do_pb(stack_a);
 	}
 	t_stack *head;
 	head = stack_a;
