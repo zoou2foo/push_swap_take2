@@ -6,49 +6,49 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/23 11:50:23 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/27 08:53:37 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_node(t_stack **stack_a)
+void	free_node(t_stack *stack_a)
 {
 	t_stack	*tempo;
 
 	while (stack_a)
 	{
-		tempo = (*stack_a)->next;
+		tempo = stack_a->next;
 		free (stack_a);
 		stack_a = tempo;
 	}
 }
 
-void	fill_lst(char **av, t_stack **stack_a)
+void	fill_lst(char **av, t_stack *stack_a)
 {
 	int	i;
 
 	i = 0;
 	while (av[i])
 	{
-		(*stack_a)->value = ft_atoi(av[i]); //met av[i] dans ma liste
+		stack_a->value = ft_atoi(av[i]); //met av[i] dans ma liste
 		i++; //on incrémente pour voir le prochain
 		if (av[i] != NULL)
 		{
-			(*stack_a)->next = ft_calloc(sizeof(t_stack), 1);
-			stack_a = (*stack_a)->next; //incrément de ta liste
+			stack_a->next = ft_calloc(sizeof(t_stack), 1);
+			stack_a = stack_a->next; //incrément de ta liste
 		}
 		else
-			(*stack_a)->next = NULL;
+			stack_a->next = NULL;
 	}
 }
 
-void	check_if_sorted(t_stack **stack_a)
+void	check_if_sorted(t_stack *stack_a)
 {
-	while ((*stack_a)->next != NULL && (*stack_a)->value < (*stack_a)->next->value)
+	while (stack_a->next != NULL && stack_a->value < stack_a->next->value)
 	{
-		stack_a = (*stack_a)->next; //doit aller au prochain pour voir; sinon ne rentre pas dans le if
-		if ((*stack_a)->value > (*stack_a)->next->value)
+		stack_a = stack_a->next; //doit aller au prochain pour voir; sinon ne rentre pas dans le if
+		if (stack_a->value > stack_a->next->value)
 		{
 			printf("pas trié\n"); //just for me
 			break ;
@@ -56,7 +56,7 @@ void	check_if_sorted(t_stack **stack_a)
 	}
 }
 
-void	setup_index(t_stack **stack_a)
+void	setup_index(t_stack *stack_a)
 {
 	t_stack	*comp;
 	t_stack *start;
@@ -67,11 +67,11 @@ void	setup_index(t_stack **stack_a)
 	{
 		while (stack_a)
 		{
-			if ((*stack_a)->value > comp->value)
+			if (stack_a->value > comp->value)
 			{
-				(*stack_a)->index++;
+				stack_a->index++;
 			}
-			stack_a = (*stack_a)->next;
+			stack_a = stack_a->next;
 		}
 		stack_a = start;
 		comp = comp->next;
