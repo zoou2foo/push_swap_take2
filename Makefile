@@ -6,14 +6,14 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/09/27 15:05:16 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/28 13:59:12 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRCS = push_swap.c check_args.c create_n_deal_list.c movements.c\
-		movements_two.c
+		movements_two.c movements_three.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/27 15:08:12 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/28 13:58:54 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,17 @@ void	do_pa(t_stack **stack_a, t_stack **stack_b);
 void	do_sa(t_stack **stack_a);
 void	do_sb(t_stack **stack_b);
 void	do_ss(t_stack **stack_a, t_stack **stack_b);
-void    do_ra(t_stack **stack_a);
+void	do_ra(t_stack **stack_a);
+void	do_rb(t_stack **stack_b);
+void	do_rr(t_stack **stack_a, t_stack **stack_b);
+void	do_rra(t_stack **stack_a);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);
+
+/* modified functions from libft */
+t_stack	*lstlast(t_stack **stack_a);
+t_stack	*lstadd_front(t_stack **stack_a, t_stack *head);
 
 /* useless functions. Just to help me */
 void	print_split(char **av);
