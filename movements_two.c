@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:05:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/28 13:40:57 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/29 14:02:18 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_stack	*lstlast(t_stack **stack_a)
 {
 	while (*stack_a)
 	{
+		*stack_a = (*stack_a)->next; //doesn't go there;
 		if ((*stack_a)->next == NULL)
 			return (*stack_a);
-		*stack_a = (*stack_a)->next;
 	}
 	return (*stack_a);
 }

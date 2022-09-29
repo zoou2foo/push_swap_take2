@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:41:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/28 14:22:53 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/29 14:15:05 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ t_stack	*lstadd_front(t_stack **stack_a, t_stack *head)
 
 void	do_rra(t_stack **stack_a)
 {
+	t_stack	*last;
 
+	printf("let's do this rra shit");
+	last = lstlast(stack_a);
+	last->next = *stack_a;
+	last = lstlast(stack_a);
+	last->next = NULL;
+	print_lst(stack_a);
 }
 //stack_a devient stack_a->next. Puis, le dernier devient le premier.
