@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/27 08:53:37 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/30 09:33:38 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,25 @@ void	setup_index(t_stack *stack_a)
 }
 //index = 0. Un élément sera à 0.
 
-/*int	lstsize(t_stack *stack_a)
+int	lstsize(t_stack *stack_a)
 {
-	stack_a->size_max = 1;
-	if (!stack_a)
+	/*(*stack_a)->size_max = 1;
+	if (!*stack_a)
 		return (0);
-	while (stack_a->next != NULL)
+	while ((*stack_a)->next != NULL)
 	{
-		stack_a->size_max++;
-		stack_a = stack_a->next;
+		(*stack_a)->size_max++;
+		*stack_a = (*stack_a)->next;
 	}
-	return (stack_a->size_max);
-}*/
+	return ((*stack_a)->size_max);*/
+	t_stack *list;
+
+	list = stack_a;
+	int i = 0;
+	while (list)
+	{
+		list = list->next;
+		i++;
+	}
+	return (i);
+}

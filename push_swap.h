@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/29 13:41:05 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/30 09:30:36 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_input(char **av, t_stack **stack_a);
 void	fill_lst(char **av, t_stack *stack_a);
 void	check_if_sorted(t_stack *stack_a);
 void	setup_index(t_stack *stack_a);
-//int		lstsize(t_stack **stack_a);
+int		lstsize(t_stack *stack_a);
 
 /* all about the movements */
 void	do_pb(t_stack **stack_a, t_stack **stack_b);
@@ -68,7 +68,7 @@ void	do_rra(t_stack **stack_a);
 void	free_node(t_stack *stack_a);
 
 /* modified functions from libft */
-t_stack	*lstlast(t_stack **stack_a);
+t_stack	*lstlast(t_stack *stack_a);
 t_stack	*lstadd_front(t_stack **stack_a, t_stack *head);
 
 /* useless functions. Just to help me */

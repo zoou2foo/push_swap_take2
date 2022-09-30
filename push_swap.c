@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/29 13:56:24 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/30 09:58:41 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	{
 		av = ft_split(av[1], ' ');
 		check_input(av, &stack_a);
-		printf("---------------\n");
+		printf("1--------------\n");
 		do_rra(&stack_a);
 		printf("---------------\n");
 	}
@@ -34,13 +34,13 @@ int	main(int ac, char **av)
 		do_ss(&stack_a, &stack_a);
 		do_ra(&stack_a);
 	}
-	free_node (stack_a); //free_node
+	//free_node (stack_a); //free_node
 	return (0);
 }
 
 void	print_lst(t_stack **stack_a)
 {
-	while (stack_a)
+	while (*stack_a != NULL)
 	{
 		printf("stack_a->value = %d | stack_a->index = %d\n", (*stack_a)->value, (*stack_a)->index);
 		*stack_a = (*stack_a)->next;
