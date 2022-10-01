@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/30 09:30:36 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/01 11:56:22 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ void	check_input(char **av, t_stack **stack_a);
 /* to deal with linked list */
 void	fill_lst(char **av, t_stack *stack_a);
 void	check_if_sorted(t_stack *stack_a);
+
+/* all about setup of index and position in stacks */
 void	setup_index(t_stack *stack_a);
-int		lstsize(t_stack *stack_a);
+void	find_pos_a(t_stack **stack_a);
 
 /* all about the movements */
 void	do_pb(t_stack **stack_a, t_stack **stack_b);
@@ -63,6 +65,8 @@ void	do_ra(t_stack **stack_a);
 void	do_rb(t_stack **stack_b);
 void	do_rr(t_stack **stack_a, t_stack **stack_b);
 void	do_rra(t_stack **stack_a);
+void	do_rrb(t_stack **stack_b);
+void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);
@@ -70,9 +74,11 @@ void	free_node(t_stack *stack_a);
 /* modified functions from libft */
 t_stack	*lstlast(t_stack *stack_a);
 t_stack	*lstadd_front(t_stack **stack_a, t_stack *head);
+int		lstsize(t_stack *stack_a);
 
 /* useless functions. Just to help me */
 void	print_split(char **av);
 void	print_lst(t_stack **stack_a);
+void	print_lst_b(t_stack **stack_b);
 
 #endif
