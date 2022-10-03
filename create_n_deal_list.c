@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/01 11:51:48 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/03 13:05:35 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,15 @@ void	fill_lst(char **av, t_stack *stack_a)
 // ^	i++; //on incrémente pour voir le prochain
 // ^ stack_a = stack_a->next; //incrément de ta liste
 
-void	check_if_sorted(t_stack *stack_a)
+int	check_if_sorted(t_stack *stack_a)
 {
 	while (stack_a->next != NULL && stack_a->value < stack_a->next->value)
 	{
 		stack_a = stack_a->next;
 		if (stack_a->value > stack_a->next->value)
-		{
-			printf("pas trié\n"); //just for me
-			break ;
-		}
+			return (1);
 	}
+	return (0);
 }
 // ^ "stack_a = stack_a->next;" doit aller au prochain pour voir; sinon ne 
 // rentre pas dans le if

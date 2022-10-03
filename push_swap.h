@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 10:51:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/03 13:07:57 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,9 @@ void	check_input(char **av, t_stack **stack_a);
 
 /* to deal with linked list */
 void	fill_lst(char **av, t_stack *stack_a);
-void	check_if_sorted(t_stack *stack_a);
+int		check_if_sorted(t_stack *stack_a);
+void	check_how_many(t_stack **stack_a);
+int		check_if_sorted_for_two(t_stack *stack_a);
 
 /* all about setup of index and position in stacks */
 void	setup_index(t_stack *stack_a);
@@ -57,7 +59,7 @@ void	find_pos_a(t_stack *stack_a);
 void	find_pos_b(t_stack *stack_b);
 //void	find_target_pos(t_stack *stack_b, t_stack *stack_a);
 
-/* all about the movements */
+/* all about the 🔄 movements 🔄*/
 void	do_pb(t_stack **stack_a, t_stack **stack_b);
 void	do_pa(t_stack **stack_a, t_stack **stack_b);
 void	do_sa(t_stack **stack_a);
@@ -69,6 +71,10 @@ void	do_rr(t_stack **stack_a, t_stack **stack_b);
 void	do_rra(t_stack **stack_a);
 void	do_rrb(t_stack **stack_b);
 void	do_rrr(t_stack **stack_a, t_stack **stack_b);
+
+/* Everything algorithms ⬇️ HERE ⬇️ */
+void	algo_for_two(t_stack **stack_a);
+void	algo_for_three(t_stack **stack_a);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);
@@ -82,5 +88,6 @@ int		lstsize(t_stack *stack_a);
 void	print_split(char **av);
 void	print_lst(t_stack **stack_a);
 void	print_lst_b(t_stack **stack_b);
+void	print_stack(t_stack **stack_a);
 
 #endif

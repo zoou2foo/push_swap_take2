@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/29 13:25:16 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/03 13:52:44 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void	check_input(char **av, t_stack **stack_a)
 	print_split(av); //don't need it but just to see
 	fill_lst(av, *stack_a);
 	check_doubles(*stack_a);
-	check_if_sorted(*stack_a);
+//	check_if_sorted(*stack_a);
 	setup_index(*stack_a);
 }

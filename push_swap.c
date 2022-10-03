@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 11:18:58 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/03 13:02:55 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,26 @@ int	main(int ac, char **av)
 		av = ft_split(av[1], ' ');
 		check_input(av, &stack_a);
 		printf("1--------------\n");
-		
+		check_how_many(&stack_a);
+		print_stack(&stack_a);
 		printf("2--------------\n");
-		
-		printf("3--------------\n");
 	}
 	if (ac > 2)
 	{
 		av++;
 		check_input(av, &stack_a);
-		
 	}
 	//free_node (stack_a); //free_node BESOIN de décommenter à la fin
 	return (0);
+}
+
+void	print_stack(t_stack **stack_a)
+{
+	while (*stack_a != NULL)
+	{
+		printf("stack_a->value = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->pos_a);
+		*stack_a = (*stack_a)->next;
+	}
 }
 
 void	print_lst(t_stack **stack_a)
