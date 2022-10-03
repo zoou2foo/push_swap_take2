@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/01 11:56:22 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/03 10:51:47 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ void	check_if_sorted(t_stack *stack_a);
 
 /* all about setup of index and position in stacks */
 void	setup_index(t_stack *stack_a);
-void	find_pos_a(t_stack **stack_a);
+void	find_pos_a(t_stack *stack_a);
+void	find_pos_b(t_stack *stack_b);
+//void	find_target_pos(t_stack *stack_b, t_stack *stack_a);
 
 /* all about the movements */
 void	do_pb(t_stack **stack_a, t_stack **stack_b);
