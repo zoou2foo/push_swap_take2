@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 10:14:49 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 11:28:04 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	find_bigger_index(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
+	printf("valeur de temp: %d\n", temp);
 	return (temp);
 }
 
@@ -86,8 +87,10 @@ t_stack	find_node_w_lower_index(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
+	printf("la node avec l'index le plus petit: %d\n", compare->value);
 	return (*compare);
 }
+// ^ fonction qui segfault
 
 /*void	find_target_pos(t_stack *stack_b, t_stack *stack_a)
 {

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 10:10:02 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 11:33:19 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	fill_lst(char **av, t_stack *stack_a);
 int		check_if_sorted(t_stack *stack_a);
 void	check_how_many(t_stack **stack_a);
 int		check_if_sorted_for_two(t_stack *stack_a);
+//, t_stack **stack_b pour check_how_many
 
 /* all about setup of index and position in stacks */
 void	setup_index(t_stack *stack_a);
@@ -77,6 +78,8 @@ void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 /* Everything algorithms ⬇️ HERE ⬇️ */
 void	algo_for_two(t_stack **stack_a);
 void	algo_for_three(t_stack **stack_a);
+void	algo_three_versa(t_stack **stack_a);
+//void	algo_for_bigger_list(t_stack **stack_a, t_stack **stack_b);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 09:04:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 11:28:25 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	main(int ac, char **av)
 		av = ft_split(av[1], ' ');
 		check_input(av, &stack_a);
 		printf("1--------------\n");
-		check_how_many(&stack_a);
+		//check_how_many(&stack_a, &stack_b);
+		find_node_w_lower_index(stack_a);
 		print_stack(&stack_a);
 		printf("2--------------\n");
 	}
