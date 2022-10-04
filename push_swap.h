@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 11:33:19 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 14:48:21 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_input(char **av, t_stack **stack_a);
 /* to deal with linked list */
 void	fill_lst(char **av, t_stack *stack_a);
 int		check_if_sorted(t_stack *stack_a);
-void	check_how_many(t_stack **stack_a);
+void	check_how_many(t_stack **stack_a, t_stack **stack_b);
 int		check_if_sorted_for_two(t_stack *stack_a);
 //, t_stack **stack_b pour check_how_many
 
@@ -60,6 +60,7 @@ void	find_pos_a(t_stack *stack_a);
 void	find_pos_b(t_stack *stack_b);
 int		find_bigger_index(t_stack *stack_a);
 t_stack	find_node_w_lower_index(t_stack *stack_a);
+int		finding_median(t_stack **stack_a);
 //void	find_target_pos(t_stack *stack_b, t_stack *stack_a);
 
 /* all about the 🔄 movements 🔄*/
@@ -79,7 +80,7 @@ void	do_rrr(t_stack **stack_a, t_stack **stack_b);
 void	algo_for_two(t_stack **stack_a);
 void	algo_for_three(t_stack **stack_a);
 void	algo_three_versa(t_stack **stack_a);
-//void	algo_for_bigger_list(t_stack **stack_a, t_stack **stack_b);
+void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);
@@ -93,6 +94,6 @@ int		lstsize(t_stack *stack_a);
 void	print_split(char **av);
 void	print_lst(t_stack **stack_a);
 void	print_lst_b(t_stack **stack_b);
-void	print_stack(t_stack **stack_a);
+void	print_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

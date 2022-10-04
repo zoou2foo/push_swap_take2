@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setup_all_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 11:28:04 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 14:22:39 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,19 +78,21 @@ t_stack	find_node_w_lower_index(t_stack *stack_a)
 	t_stack	*head;
 	t_stack	*compare;
 
-	temp = 0;
+	temp = INT_MAX;
 	head = stack_a;
 	while (stack_a)
 	{
 		if (stack_a->index < temp)
+		{
 			compare = stack_a;
+			temp = stack_a->index;
+		}
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
 	printf("la node avec l'index le plus petit: %d\n", compare->value);
 	return (*compare);
 }
-// ^ fonction qui segfault
 
 /*void	find_target_pos(t_stack *stack_b, t_stack *stack_a)
 {

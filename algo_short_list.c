@@ -3,24 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   algo_short_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 11:32:42 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 14:52:44 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//, t_stack **stack_b)
-void	check_how_many(t_stack **stack_a)
+// t_stack **stack_b
+void	check_how_many(t_stack **stack_a, t_stack **stack_b)
 {
-	if (lstsize(*stack_a) == 2)
+	(*stack_a)->size_max = lstsize(*stack_a);
+	if ((*stack_a)->size_max == 2)
 		algo_for_two(stack_a);
-	if (lstsize(*stack_a) == 3)
+	if ((*stack_a)->size_max == 3)
 		algo_three_versa(stack_a);
-//	if (lstsize(*stack_a) > 3)
-//		algo_for_bigger_list(stack_a, stack_b);
+	if ((*stack_a)->size_max > 3)
+		move_almost_all_in_b(stack_a, stack_b);
 }
 
 void	algo_for_two(t_stack **stack_a)

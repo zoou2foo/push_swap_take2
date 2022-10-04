@@ -3,22 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   algo_bigger_list.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 11:32:04 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 14:57:46 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*void	algo_for_bigger_list(t_stack **stack_a, t_stack **stack_b)
+int	finding_median(t_stack **stack_a)
 {
-	if (check_if_sorted(*stack_a) == 0)
-		return ;
-	else if (check_if_sorted(*stack_a) == 1)
+	int	median;
+
+	median = lstsize(*stack_a) / 2;
+	return (median);
+}
+
+void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b)
+{
+	while ((lstsize(*stack_a) >= 3)
 	{
-		find_pos_a(*stack_a);
-		
+		if ((*stack_a)->index < finding_median(stack_a))
+			do_pb(stack_a, stack_b);
+		else
+			do_ra(stack_a);
 	}
-} */
+}
+// ^ boucle infini dans cette fonction... Try to fix it tomorrow
