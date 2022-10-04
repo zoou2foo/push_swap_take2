@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 10:52:01 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 10:14:49 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,48 @@ void	find_pos_b(t_stack *stack_b)
 		stack_b = stack_b->next;
 	}
 	stack_b = head_b;
+}
+
+int	check_if_sorted_for_two(t_stack *stack_a)
+{
+	if (stack_a->next != NULL && stack_a->value < stack_a->next->value)
+		return (0);
+	return (1);
+}
+
+int	find_bigger_index(t_stack *stack_a)
+{
+	int		temp;
+	t_stack	*head;
+
+	temp = 0;
+	head = stack_a;
+	while (stack_a)
+	{
+		if (stack_a->index > temp)
+			temp = stack_a->index;
+		stack_a = stack_a->next;
+	}
+	stack_a = head;
+	return (temp);
+}
+
+t_stack	find_node_w_lower_index(t_stack *stack_a)
+{
+	int		temp;
+	t_stack	*head;
+	t_stack	*compare;
+
+	temp = 0;
+	head = stack_a;
+	while (stack_a)
+	{
+		if (stack_a->index < temp)
+			compare = stack_a;
+		stack_a = stack_a->next;
+	}
+	stack_a = head;
+	return (*compare);
 }
 
 /*void	find_target_pos(t_stack *stack_b, t_stack *stack_a)

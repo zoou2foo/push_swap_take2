@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 13:02:55 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 09:04:47 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,22 @@ int	main(int ac, char **av)
 
 void	print_stack(t_stack **stack_a)
 {
+	t_stack	*head;
+
+	head = *stack_a;
 	while (*stack_a != NULL)
 	{
 		printf("stack_a->value = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->pos_a);
 		*stack_a = (*stack_a)->next;
 	}
+	*stack_a = head;
 }
 
 void	print_lst(t_stack **stack_a)
 {
+	t_stack	*head;
+
+	head = *stack_a;
 	while (*stack_a != NULL)
 	{
 		printf("stack_a->value = %d | stack_a->index = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->index, (*stack_a)->pos_a);

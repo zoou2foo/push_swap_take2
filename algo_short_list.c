@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 15:02:22 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 09:22:33 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,6 @@ void	algo_for_two(t_stack **stack_a)
 		return ;
 	else if (check_if_sorted_for_two(*stack_a) == 1)
 		do_sa(stack_a);
-}
-
-int	check_if_sorted_for_two(t_stack *stack_a)
-{
-	if (stack_a->next != NULL && stack_a->value < stack_a->next->value)
-		return (0);
-	return (1);
 }
 
 void	algo_for_three(t_stack **stack_a)
@@ -59,4 +52,3 @@ void	algo_for_three(t_stack **stack_a)
 	}
 }
 
-// segfault dans le if après rra... la stack_a serait vide.

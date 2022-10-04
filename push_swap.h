@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 13:07:57 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 10:10:02 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int		check_if_sorted_for_two(t_stack *stack_a);
 void	setup_index(t_stack *stack_a);
 void	find_pos_a(t_stack *stack_a);
 void	find_pos_b(t_stack *stack_b);
+int		find_bigger_index(t_stack *stack_a);
+t_stack	find_node_w_lower_index(t_stack *stack_a);
 //void	find_target_pos(t_stack *stack_b, t_stack *stack_a);
 
 /* all about the 🔄 movements 🔄*/

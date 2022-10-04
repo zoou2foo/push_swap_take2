@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:41:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/01 11:18:24 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/04 08:41:19 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	do_rra(t_stack **stack_a)
 	}
 	last->next = NULL; // skip mais fonctionne...
 	*stack_a = new_head;
-	print_lst(stack_a);
+	//print_lst(stack_a);
 }
 // ^ besoin de plusieurs nouvelles variables
 // ^ last pour trouver le dernier node de la liste. Old_head qui représente
