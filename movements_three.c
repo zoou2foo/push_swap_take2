@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movements_three.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:41:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 08:41:19 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/05 08:57:46 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void	do_rrb(t_stack **stack_b)
 	int		size;
 	int		i;
 
-	printf("let's do this fucking shit rrb\n");
 	i = 1;
 	old_head = *stack_b;
 	size = lstsize(old_head);
@@ -78,7 +77,6 @@ void	do_rrb(t_stack **stack_b)
 	}
 	last->next = NULL;
 	*stack_b = new_head;
-	print_lst_b(stack_b);
 }
 
 void	do_rrr(t_stack **stack_a, t_stack **stack_b)

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 14:22:39 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/05 13:40:17 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,15 +93,3 @@ t_stack	find_node_w_lower_index(t_stack *stack_a)
 	printf("la node avec l'index le plus petit: %d\n", compare->value);
 	return (*compare);
 }
-
-/*void	find_target_pos(t_stack *stack_b, t_stack *stack_a)
-{
-	t_stack	*head_a;
-	t_stack	*head_b;
-	int		i;
-
-	i = 0;
-	head_a = stack_a;
-	head_b = stack_b;
-	
-}*/

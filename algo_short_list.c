@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/04 14:52:44 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/05 13:46:12 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@ void	check_how_many(t_stack **stack_a, t_stack **stack_b)
 	if ((*stack_a)->size_max == 2)
 		algo_for_two(stack_a);
 	if ((*stack_a)->size_max == 3)
-		algo_three_versa(stack_a);
+		algo_for_three(stack_a);
 	if ((*stack_a)->size_max > 3)
+	{
 		move_almost_all_in_b(stack_a, stack_b);
+		algo_three_versa(stack_a);
+		finding_pos(*stack_a, *stack_b);
+		find_target_pos(stack_a, stack_b);
+	}
 }
 
 void	algo_for_two(t_stack **stack_a)
@@ -60,18 +65,5 @@ void	algo_three_versa(t_stack **stack_a)
 	if (check_if_sorted(*stack_a) == 0)
 		return ;
 	else if (check_if_sorted(*stack_a) == 1)
-	{
-		if ((*stack_a)->index == find_bigger_index(*stack_a))
-		{
-			do_ra(stack_a);
-			if ((*stack_a)->index > (*stack_a)->next->index)
-				do_sa(stack_a);
-		}
-		else if ((*stack_a)->next->index == find_bigger_index(*stack_a))
-		{
-			do_rra(stack_a);
-			if ((*stack_a)->index > (*stack_a)->next->index)
-				do_sa(stack_a);
-		}
-	}
+		do_algo_more_three(stack_a);
 }

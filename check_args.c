@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:52:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/03 13:52:44 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/05 09:02:32 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,6 @@ void	check_input(char **av, t_stack **stack_a)
 {
 	is_alpha(av);
 	check_numbers(av);
-	print_split(av); //don't need it but just to see
 	fill_lst(av, *stack_a);
 	check_doubles(*stack_a);
 //	check_if_sorted(*stack_a);

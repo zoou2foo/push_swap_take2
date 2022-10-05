@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
+#    By: vjean <vjean@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/10/04 11:29:23 by vjean            ###   ########.fr        #
+#    Updated: 2022/10/05 14:22:17 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 SRCS = push_swap.c check_args.c create_n_deal_list.c movements.c\
 		movements_two.c movements_three.c setup_all_index.c algo_short_list.c\
-		algo_bigger_list.c \
+		algo_bigger_list.c all_about_cost.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a
