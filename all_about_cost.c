@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   all_about_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 14:22:32 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 08:31:01 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void    find_cost_b(t_stack **stack_b)
+{
+	
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_bigger_list.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 14:07:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 08:57:23 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b)
 			do_ra(stack_a);
 	}
 }
+// ^ problème avec plus de 6. Genre 7. Car à la fin, il reste que des index
+// plus grand que la médiane, mais il reste plus que 3 chiffres
+// il faut que j'ajuste mes conditions. Il faudrait regarder pour le
+// plus petit index dans ce cas pour le pousser vers b
 
 void	find_target_pos(t_stack **stack_a, t_stack **stack_b)
 {
