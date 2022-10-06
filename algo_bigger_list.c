@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_bigger_list.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 08:57:23 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/06 13:41:26 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,18 @@ int	finding_median(t_stack **stack_a)
 
 void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b)
 {
-	while ((lstsize(*stack_a) > 3))
+	int	size; 
+	int	cpt;
+
+	size = lstsize(*stack_a);
+	cpt = 0;
+	while (cpt < size && lstsize(*stack_a) > 3)
 	{
 		if ((*stack_a)->index < finding_median(stack_a))
 			do_pb(stack_a, stack_b);
 		else
 			do_ra(stack_a);
+		cpt++;
 	}
 }
 // ^ problème avec plus de 6. Genre 7. Car à la fin, il reste que des index

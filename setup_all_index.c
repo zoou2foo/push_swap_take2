@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 13:40:17 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 13:22:52 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	find_bigger_index(t_stack *stack_a)
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
-	printf("valeur de temp: %d\n", temp);
 	return (temp);
 }
 

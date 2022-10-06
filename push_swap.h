@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 13:45:41 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 14:53:11 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_stack{
 
 // value: nombre à trier
 // index: son index dans toute la liste à trier
-// size_max: savoir le nombre total d'éléments à trier
+// size_max: savoir le nombre total d'éléments à tr ier
 // pos_a: position actuelle dans la pile de A
 // pos_b: position actuelle dans la pile de B
 // target_pos: position cible dans la pileA (quand dans la pileB)
@@ -83,6 +83,8 @@ void	algo_for_three(t_stack **stack_a);
 void	algo_three_versa(t_stack **stack_a);
 void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b);
 void	do_algo_more_three(t_stack **stack_a);
+
+/* all about the 💲 cost 💲 */
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

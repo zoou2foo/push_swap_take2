@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 10:35:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 13:21:02 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,14 @@ void	print_stack(t_stack **stack_a, t_stack **stack_b)
 
 	head = *stack_a;
 	head_b = *stack_b;
-	while (*stack_a != NULL && *stack_b != NULL)
+	while (*stack_a != NULL)
 	{
 		printf("stack_a->value = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->pos_a);
-		printf("stack_b->value = %d | stack_b->pos_b = %d | stack_b->target_pos = %d\n", (*stack_b)->value, (*stack_b)->pos_b, (*stack_b)->target_pos);
 		*stack_a = (*stack_a)->next;
+	}
+	while (*stack_b != NULL)
+	{
+		printf("stack_b->value = %d | stack_b->pos_b = %d | stack_b->target_pos = %d\n", (*stack_b)->value, (*stack_b)->pos_b, (*stack_b)->target_pos);
 		*stack_b = (*stack_b)->next;
 	}
 	*stack_a = head;
