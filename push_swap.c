@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 13:21:02 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 20:02:14 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,55 +46,20 @@ void	print_stack(t_stack **stack_a, t_stack **stack_b)
 	head_b = *stack_b;
 	while (*stack_a != NULL)
 	{
-		printf("stack_a->value = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->pos_a);
+		printf("stack_a->value = %d | stack_a->pos_a = %d | stack_a->cost_a = %d\n", (*stack_a)->value, (*stack_a)->pos_a, (*stack_a)->cost_a);
 		*stack_a = (*stack_a)->next;
 	}
 	while (*stack_b != NULL)
 	{
-		printf("stack_b->value = %d | stack_b->pos_b = %d | stack_b->target_pos = %d\n", (*stack_b)->value, (*stack_b)->pos_b, (*stack_b)->target_pos);
+		printf("stack_b->value = %d | stack_b->pos_b = %d | stack_b->target_pos = %d | stack_b->cost_b = %d\n", (*stack_b)->value, (*stack_b)->pos_b, (*stack_b)->target_pos, (*stack_b)->cost_b);
 		*stack_b = (*stack_b)->next;
 	}
 	*stack_a = head;
 	*stack_b = head_b;
 }
 
-
-//do_pb(&stack_a, &stack_b);
-//do_sa(&stack_a);
-//do_ss(&stack_a, &stack_a);
-//do_ra(&stack_a);
-//do_pb(&stack_a, &stack_b);
-//do_pa(&stack_a, &stack_b);
-//do_sa(&stack_a);
-//do_rb(&stack_b);
-//do_rrb(&stack_b);
-//print_lst_b(&stack_b);
-//do_rra(&stack_a);
-//		find_pos_a(stack_a);
-
 // do_ss/do_rr/do_rrr: il faut que j'instaure un principe pour qu'il écrit
 //qu'il a fait ss, rr ou rrr et non pas, sa sb/ ra rb / rra rrb. D'où l'utilité
 //d'un int i pour true/false (0 1) dans les mouvements en questions
 // même faire un int 1, 2, 3: 1 pour sa, 2 pour sb, 3 pour ss (par exemple)
 //t_stack *stack_b PAS OBLIGÉ de malloc
-
-/*void	print_lst(t_stack **stack_a)
-{
-	t_stack	*head;
-
-	head = *stack_a;
-	while (*stack_a != NULL)
-	{
-		printf("stack_a->value = %d | stack_a->index = %d | stack_a->pos_a = %d\n", (*stack_a)->value, (*stack_a)->index, (*stack_a)->pos_a);
-		*stack_a = (*stack_a)->next;
-	}
-}
-
-void	print_lst_b(t_stack **stack_b)
-{
-	while (*stack_b != NULL)
-	{
-		printf("stack_b->value = %d | stack_b->index = %d | stack_b->pos_b = %d\n", (*stack_b)->value, (*stack_b)->index, (*stack_b)->pos_b);
-		*stack_b = (*stack_b)->next;
-	}
-}*/

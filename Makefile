@@ -6,7 +6,7 @@
 #    By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 14:52:28 by vjean             #+#    #+#              #
-#    Updated: 2022/10/06 08:16:54 by valeriejean      ###   ########.fr        #
+#    Updated: 2022/10/06 19:33:44 by valeriejean      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = push_swap
 
 SRCS = push_swap.c check_args.c create_n_deal_list.c movements.c\
 		movements_two.c movements_three.c setup_all_index.c algo_short_list.c\
-		algo_bigger_list.c  \
-# all_about_cost.c
+		algo_bigger_list.c all_about_cost.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a

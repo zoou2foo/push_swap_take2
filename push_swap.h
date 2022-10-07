@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 14:53:11 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/06 19:37:10 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b);
 void	do_algo_more_three(t_stack **stack_a);
 
 /* all about the 💲 cost 💲 */
+void	find_cost_b(t_stack **stack_b);
+void	find_cost_a(t_stack **stack_a);
+//void	compare_cost(t_stack **stack_a, t_stack **stack_b);
+
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);
