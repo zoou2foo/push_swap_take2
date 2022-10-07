@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/07 12:06:25 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/07 14:09:37 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void	do_algo_more_three(t_stack **stack_a);
 void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b);
 
 /* all about the 💲 cost 💲 */
-void	find_cost_b(t_stack **stack_b);
-void	find_cost_a(t_stack **stack_a);
+void	find_cost(t_stack **stack_a, t_stack **stack_b);
+
 //void	compare_cost(t_stack **stack_a, t_stack **stack_b);
 
 /* Yeah I'm free! Free fallin'!! */
