@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 19:37:10 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/07 12:06:25 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	setup_index(t_stack *stack_a);
 void	find_pos_a(t_stack *stack_a);
 void	find_pos_b(t_stack *stack_b);
 int		find_bigger_index(t_stack *stack_a);
-t_stack	find_node_w_lower_index(t_stack *stack_a);
+t_stack	*find_node_w_lower_index(t_stack *stack_a);
 int		finding_median(t_stack **stack_a);
 void	finding_pos(t_stack *stack_a, t_stack *stack_b);
 void	find_target_pos(t_stack **stack_a, t_stack **stack_b);
@@ -83,12 +83,12 @@ void	algo_for_three(t_stack **stack_a);
 void	algo_three_versa(t_stack **stack_a);
 void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b);
 void	do_algo_more_three(t_stack **stack_a);
+void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b);
 
 /* all about the 💲 cost 💲 */
 void	find_cost_b(t_stack **stack_b);
 void	find_cost_a(t_stack **stack_a);
 //void	compare_cost(t_stack **stack_a, t_stack **stack_b);
-
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

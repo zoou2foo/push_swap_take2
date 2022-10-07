@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 11:54:19 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 13:22:52 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/07 12:09:01 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	find_bigger_index(t_stack *stack_a)
 	return (temp);
 }
 
-t_stack	find_node_w_lower_index(t_stack *stack_a)
+t_stack	*find_node_w_lower_index(t_stack *stack_a)
 {
 	int		temp;
 	t_stack	*head;
@@ -90,5 +90,5 @@ t_stack	find_node_w_lower_index(t_stack *stack_a)
 	}
 	stack_a = head;
 	printf("la node avec l'index le plus petit: %d\n", compare->value);
-	return (*compare);
+	return (compare);
 }
