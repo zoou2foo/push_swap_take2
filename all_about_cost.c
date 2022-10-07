@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   all_about_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/06 19:46:33 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/07 08:40:10 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	find_cost_b(t_stack **stack_b)
 {
-	t_stack *head_b;
-	
+	t_stack	*head_b;
+
 	head_b = *stack_b;
 	while (*stack_b)
 	{
@@ -31,8 +31,8 @@ void	find_cost_b(t_stack **stack_b)
 
 void	find_cost_a(t_stack **stack_a)
 {
-	t_stack *head_a;
-	
+	t_stack	*head_a;
+
 	head_a = *stack_a;
 	while (*stack_a)
 	{
