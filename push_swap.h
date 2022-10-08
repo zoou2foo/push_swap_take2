@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/07 14:09:37 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/08 12:01:32 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	find_pos_b(t_stack *stack_b);
 int		find_bigger_index(t_stack *stack_a);
 t_stack	*find_node_w_lower_index(t_stack *stack_a);
 int		finding_median(t_stack **stack_a);
-void	finding_pos(t_stack *stack_a, t_stack *stack_b);
+void	finding_all_pos(t_stack *stack_a, t_stack *stack_b);
 void	find_target_pos(t_stack **stack_a, t_stack **stack_b);
 
 /* all about the 🔄 movements 🔄 */
@@ -87,6 +87,7 @@ void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b);
 
 /* all about the 💲 cost 💲 */
 void	find_cost(t_stack **stack_a, t_stack **stack_b);
+void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b);
 
 //void	compare_cost(t_stack **stack_a, t_stack **stack_b);
 

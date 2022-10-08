@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   algo_bigger_list.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/07 12:14:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/08 12:01:21 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	finding_pos(t_stack *stack_a, t_stack *stack_b)
+void	finding_all_pos(t_stack *stack_a, t_stack *stack_b)
 {
 	find_pos_a(stack_a);
 	find_pos_b(stack_b);
