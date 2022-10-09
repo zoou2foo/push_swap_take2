@@ -6,7 +6,7 @@
 /*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/09 11:28:09 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/09 19:24:17 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,27 @@ void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
 	{
 		if (get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b) <
 			get_abs_nb(cheapest))
-			
+		{
+			cheapest = get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b);
+			cost_a = (*stack_b)->cost_a;
+			cost_b = (*stack_b)->cost_b;
+		}
+		*stack_b = (*stack_b)->next;
 	}
+	*stack_b = head;
+	plan_moves(stack_a, stack_b, cost_a, cost_b);
 }
 // ^ besoin t_stack tmp pour se balader dans la liste; int cheapest pour trouver
 // le coût le moins cher; int cost_a et cost_b pour envoyer faire les séquences
 // d'actions en conséquence du coût
 // Notre int cheapest: on le start à INT_MAX, pour la jouer sûr selon le nb
 // qu'on reçoit
-//call une fonction de nb_abs pour trouver le nombre absolu des coûts. On ne veut pas
-//tenir compte des signes. int nb_abs(int nb) if (nb < 0) return (nb * -1); 
-//return (nb)
-//On envoie à nb_abs cost_a et cost_b (from structure). 
+//call une fonction de nb_abs pour trouver le nombre absolu des coûts. On ne
+// veut pas tenir compte des signes. Si le nombre absolu de cost_a PLUS le 
+// nombre absolu de cost est PLUS petit que le nombre absolu de cheapest, 
+// cheapest ÉGALE nb abs de cost b + nb abs de cost a.
+// int cost_a devient maintenant égale à struct cost_a et int cost_b devient
+// égale à struct cost_b. On envoie à nb_abs cost_a et cost_b (from structure). 
 
 int	get_abs_nb(int nb)
 {
@@ -80,3 +89,17 @@ int	get_abs_nb(int nb)
 		return (nb * -1);
 	return (nb);
 }
+
+void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
+{
+	if (cost_a < 0 && cost_b < 0)
+		do_rrr(stack_a, stack_b); //à modifier pour message
+	else if (cost_a > 0 && cost_b > 0)
+		do_rr(stack_a, stack_b); //à modifier pour messsage
+	do_ra(stack_a);
+	do_rb(stack_b);
+	do_pa(stack_a, stack_b);
+}
+// ^ besoin de changer mes moves pour qu'il prenne un int et le int détermine
+// le nombre de fois à faire le move. Puis, je dois ajouter write(1, "ra", 2);
+// le move qu'il a fait.

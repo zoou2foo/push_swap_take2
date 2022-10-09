@@ -6,7 +6,7 @@
 /*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/08 12:01:32 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/09 19:29:04 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b);
 /* all about the 💲 cost 💲 */
 void	find_cost(t_stack **stack_a, t_stack **stack_b);
 void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b);
-
-//void	compare_cost(t_stack **stack_a, t_stack **stack_b);
+int		get_abs_nb(int nb);
+void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

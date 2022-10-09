@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_short_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/07 11:13:19 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/09 19:30:27 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	check_how_many(t_stack **stack_a, t_stack **stack_b)
 		move_almost_all_in_b(stack_a, stack_b);
 		check_only_three_in_a(stack_a, stack_b);
 		algo_three_versa(stack_a);
-		finding_pos(*stack_a, *stack_b);
+		finding_all_pos(*stack_a, *stack_b);
 		find_target_pos(stack_a, stack_b);
-		find_cost_b(stack_b);
-		find_cost_a(stack_a);
+		find_cost(stack_a, stack_b);
+		find_cheapest_cost(stack_a, stack_b);
 	}
 }
 
