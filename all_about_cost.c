@@ -6,7 +6,7 @@
 /*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/08 12:16:08 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/09 11:28:09 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,33 @@ void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b)
 
 void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack	*head;
+	int		cost_a;
+	int		cost_b;
+	int		cheapest;
 
+	cheapest = INT_MAX;
+	head = *stack_b;
+	while (*stack_b)
+	{
+		if (get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b) <
+			get_abs_nb(cheapest))
+			
+	}
 }
 // ^ besoin t_stack tmp pour se balader dans la liste; int cheapest pour trouver
-// le coût le moins cher; int cost_a et cost_a pour envoyer faire les séquences
+// le coût le moins cher; int cost_a et cost_b pour envoyer faire les séquences
 // d'actions en conséquence du coût
-// Notre int cheapest: on le start à INT_MAX, car on ne peut pas plus qu'un int max
-// ou plus en lien avec le nombre d'éléments qu'on peut recevoir...
-//call une fonction de nb_abs pour trouver le nombre absolu des coûts..?? Pour 
-// changer les signes. int nb_abs(int nb) if (nb < 0) return (nb * -1); return (nb)
+// Notre int cheapest: on le start à INT_MAX, pour la jouer sûr selon le nb
+// qu'on reçoit
+//call une fonction de nb_abs pour trouver le nombre absolu des coûts. On ne veut pas
+//tenir compte des signes. int nb_abs(int nb) if (nb < 0) return (nb * -1); 
+//return (nb)
+//On envoie à nb_abs cost_a et cost_b (from structure). 
+
+int	get_abs_nb(int nb)
+{
+	if (nb < 0)
+		return (nb * -1);
+	return (nb);
+}
