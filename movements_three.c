@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:41:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 08:57:46 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/11 09:07:36 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,21 @@ void	do_rra(t_stack **stack_a)
 	int		i;
 
 	i = 1;
-	old_head = *stack_a; // old_head = 4 3 2 1; comme stack_a pour le moment
-	size = lstsize(old_head); // size devient 4
+	old_head = *stack_a;
+	size = lstsize(old_head);
 	if (size == 1)
 		return ;
-	last = lstlast(old_head); // last devient 1
-	new_head = last; // maintenant, new_head pointe 1; pour être au début
-	last->next = old_head; //le node suivant 1 devient old_head qui pointe 4
-	while (i < size) //tant que i est plus petit que 4 (le size de la lst)
+	last = lstlast(old_head);
+	new_head = last;
+	last->next = old_head;
+	while (i < size)
 	{
-		last = last->next; // 1->4; 4->3; 3->2; 2->1;
+		last = last->next;
 		i++;
 	}
-	last->next = NULL; // skip mais fonctionne...
+	last->next = NULL;
 	*stack_a = new_head;
-	//print_lst(stack_a);
+	write(1, "rra", 3);
 }
 // ^ besoin de plusieurs nouvelles variables
 // ^ last pour trouver le dernier node de la liste. Old_head qui représente
@@ -77,6 +77,7 @@ void	do_rrb(t_stack **stack_b)
 	}
 	last->next = NULL;
 	*stack_b = new_head;
+	write(1, "rrb", 3);
 }
 
 void	do_rrr(t_stack **stack_a, t_stack **stack_b)
@@ -84,3 +85,4 @@ void	do_rrr(t_stack **stack_a, t_stack **stack_b)
 	do_rra(stack_a);
 	do_rrb(stack_b);
 }
+// ^ besoin de gérer rrr

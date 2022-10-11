@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   all_about_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/09 19:24:17 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/11 09:20:45 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
 	head = *stack_b;
 	while (*stack_b)
 	{
-		if (get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b) <
-			get_abs_nb(cheapest))
+		if (get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b)
+			< get_abs_nb(cheapest))
 		{
-			cheapest = get_abs_nb((*stack_b)->cost_a) + get_abs_nb((*stack_b)->cost_b);
+			cheapest = get_abs_nb((*stack_b)->cost_a)
+				+ get_abs_nb((*stack_b)->cost_b);
 			cost_a = (*stack_b)->cost_a;
 			cost_b = (*stack_b)->cost_b;
 		}
@@ -96,8 +97,8 @@ void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
 		do_rrr(stack_a, stack_b); //à modifier pour message
 	else if (cost_a > 0 && cost_b > 0)
 		do_rr(stack_a, stack_b); //à modifier pour messsage
-	do_ra(stack_a);
-	do_rb(stack_b);
+	//do_ra(stack_a); peut-être besoin de le garder plus vers la fin pour check
+	//do_rb(stack_b);
 	do_pa(stack_a, stack_b);
 }
 // ^ besoin de changer mes moves pour qu'il prenne un int et le int détermine
