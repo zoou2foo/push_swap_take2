@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/09 19:29:04 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/11 14:50:37 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,14 @@ void	do_pa(t_stack **stack_a, t_stack **stack_b);
 void	do_sa(t_stack **stack_a);
 void	do_sb(t_stack **stack_b);
 void	do_ss(t_stack **stack_a, t_stack **stack_b);
-void	do_ra(t_stack **stack_a);
-void	do_rb(t_stack **stack_b);
-void	do_rr(t_stack **stack_a, t_stack **stack_b);
-void	do_rra(t_stack **stack_a);
-void	do_rrb(t_stack **stack_b);
-void	do_rrr(t_stack **stack_a, t_stack **stack_b);
+void	do_ra(t_stack **stack_a, int i);
+void	do_rb(t_stack **stack_b, int i);
+void	do_rr(t_stack **stack_a, t_stack **stack_b, int i);
+void	do_rra(t_stack **stack_a, int j);
+void	do_rrb(t_stack **stack_b, int j);
+void	do_rrr(t_stack **stack_a, t_stack **stack_b, int i);
+void	setup_rrr(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
+void	setup_rr(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
 
 /* Everything algorithms ⬇️ HERE ⬇️ */
 void	algo_for_two(t_stack **stack_a);
@@ -89,7 +91,8 @@ void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b);
 void	find_cost(t_stack **stack_a, t_stack **stack_b);
 void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b);
 int		get_abs_nb(int nb);
-void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
+void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a,
+			int cost_b);
 
 /* Yeah I'm free! Free fallin'!! */
 void	free_node(t_stack *stack_a);

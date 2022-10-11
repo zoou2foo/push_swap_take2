@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:41:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 09:07:36 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/11 14:50:58 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_stack	*lstadd_front(t_stack **stack_a, t_stack *head)
 	return (*stack_a);
 }
 
-void	do_rra(t_stack **stack_a)
+void	do_rra(t_stack **stack_a, int j)
 {
 	t_stack	*last;
 	t_stack	*old_head;
@@ -44,7 +44,8 @@ void	do_rra(t_stack **stack_a)
 	}
 	last->next = NULL;
 	*stack_a = new_head;
-	write(1, "rra", 3);
+	if (j == 0)
+		write(1, "rra\n", 4);
 }
 // ^ besoin de plusieurs nouvelles variables
 // ^ last pour trouver le dernier node de la liste. Old_head qui représente
@@ -54,7 +55,7 @@ void	do_rra(t_stack **stack_a)
 // ^ récupérer le nouveau "dernier" node. Puis, un index pour parcourir la list
 // ^ selon la size.
 
-void	do_rrb(t_stack **stack_b)
+void	do_rrb(t_stack **stack_b, int j)
 {
 	t_stack	*last;
 	t_stack	*old_head;
@@ -77,12 +78,14 @@ void	do_rrb(t_stack **stack_b)
 	}
 	last->next = NULL;
 	*stack_b = new_head;
-	write(1, "rrb", 3);
+	if (j == 0)
+		write(1, "rrb\n", 4);
 }
 
-void	do_rrr(t_stack **stack_a, t_stack **stack_b)
+void	do_rrr(t_stack **stack_a, t_stack **stack_b, int i)
 {
-	do_rra(stack_a);
-	do_rrb(stack_b);
+	do_rra(stack_a, i);
+	do_rrb(stack_b, i);
+	if (i == 1)
+		write(1, "rrr\n", 4);
 }
-// ^ besoin de gérer rrr

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_short_list.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
+/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/09 19:30:27 by valeriejean      ###   ########.fr       */
+/*   Updated: 2022/10/11 14:53:31 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void	algo_for_two(t_stack **stack_a)
 
 void	algo_for_three(t_stack **stack_a)
 {
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
 	find_pos_a(*stack_a);
 	if (check_if_sorted(*stack_a) == 0)
 		return ;
@@ -49,13 +54,13 @@ void	algo_for_three(t_stack **stack_a)
 	{
 		if ((*stack_a)->pos_a == 0 && (*stack_a)->index == 2)
 		{
-			do_ra(stack_a);
+			do_ra(stack_a, i);
 			if ((*stack_a)->index > (*stack_a)->next->index)
 				do_sa(stack_a);
 		}
 		else if ((*stack_a)->next->pos_a == 1 && (*stack_a)->next->index == 2)
 		{
-			do_rra(stack_a);
+			do_rra(stack_a, j);
 			if ((*stack_a)->index > (*stack_a)->next->index)
 				do_sa(stack_a);
 		}

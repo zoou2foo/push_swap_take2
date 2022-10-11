@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 09:20:45 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/11 13:44:29 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,17 +90,3 @@ int	get_abs_nb(int nb)
 		return (nb * -1);
 	return (nb);
 }
-
-void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
-{
-	if (cost_a < 0 && cost_b < 0)
-		do_rrr(stack_a, stack_b); //à modifier pour message
-	else if (cost_a > 0 && cost_b > 0)
-		do_rr(stack_a, stack_b); //à modifier pour messsage
-	//do_ra(stack_a); peut-être besoin de le garder plus vers la fin pour check
-	//do_rb(stack_b);
-	do_pa(stack_a, stack_b);
-}
-// ^ besoin de changer mes moves pour qu'il prenne un int et le int détermine
-// le nombre de fois à faire le move. Puis, je dois ajouter write(1, "ra", 2);
-// le move qu'il a fait.

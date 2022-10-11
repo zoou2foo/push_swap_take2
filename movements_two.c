@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 15:05:29 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 09:06:13 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/11 14:41:40 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*lstlast(t_stack *stack_a)
 	return (stack_a);
 }
 
-void	do_ra(t_stack **stack_a)
+void	do_ra(t_stack **stack_a, int i)
 {
 	t_stack	*last;
 
@@ -31,10 +31,11 @@ void	do_ra(t_stack **stack_a)
 	last->next = *stack_a;
 	*stack_a = (*stack_a)->next;
 	last->next->next = NULL;
-	write(1, "ra", 2); //besoin de revoir pour pas écrire 2 fois ra
+	if (i == 0)
+		write(1, "ra\n", 3);
 }
 
-void	do_rb(t_stack **stack_b)
+void	do_rb(t_stack **stack_b, int i)
 {
 	t_stack	*last;
 
@@ -42,12 +43,15 @@ void	do_rb(t_stack **stack_b)
 	last->next = *stack_b;
 	*stack_b = (*stack_b)->next;
 	last->next->next = NULL;
-	write(1, "rb", 2); //besoin de revoir pour pas écrire 2 fois rb
+	if (i == 0)
+		write(1, "rb\n", 3);
 }
 
-void	do_rr(t_stack **stack_a, t_stack **stack_b)
+void	do_rr(t_stack **stack_a, t_stack **stack_b, int i)
 {
-	do_ra(stack_a);
-	do_rb(stack_b);
+	do_ra(stack_a, i);
+	do_rb(stack_b, i);
+	if (i == 1)
+		write(1, "rr\n", 3);
 }
-// ^ besoin d'écrire rr
+

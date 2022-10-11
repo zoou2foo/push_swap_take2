@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 09:16:42 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/05 11:25:43 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/11 15:23:56 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_if_sorted(t_stack *stack_a)
 	head_a = stack_a;
 	while (stack_a)
 	{
-		if (stack_a->value > stack_a->next->value)
+		if (stack_a->next != NULL && stack_a->value > stack_a->next->value)
 			return (1);
 		stack_a = stack_a->next;
 	}
