@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 14:55:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 14:18:10 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	find_target_pos(t_stack **stack_a, t_stack **stack_b)
 		*stack_a = head_a; //pour ensuite gérer ceux inférieur
 	}
 	*stack_b = head_b;
+	find_cost(stack_a, stack_b);
 }
 
 void	do_algo_more_three(t_stack **stack_a)

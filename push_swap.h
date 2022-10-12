@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:26:43 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 14:50:37 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 14:28:32 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ void	do_rrb(t_stack **stack_b, int j);
 void	do_rrr(t_stack **stack_a, t_stack **stack_b, int i);
 void	setup_rrr(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
 void	setup_rr(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
+void	setup_ra(t_stack **stack_a, int cost_a);
+void	setup_rb(t_stack **stack_b, int cost_b);
 
 /* Everything algorithms ⬇️ HERE ⬇️ */
 void	algo_for_two(t_stack **stack_a);

@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:31:00 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 14:53:31 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 14:16:59 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	check_how_many(t_stack **stack_a, t_stack **stack_b)
 		check_only_three_in_a(stack_a, stack_b);
 		algo_three_versa(stack_a);
 		finding_all_pos(*stack_a, *stack_b);
-		find_target_pos(stack_a, stack_b);
 		find_cost(stack_a, stack_b);
+		find_target_pos(stack_a, stack_b);
 		find_cheapest_cost(stack_a, stack_b);
 	}
 }

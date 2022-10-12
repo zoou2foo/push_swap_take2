@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 15:27:43 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 09:18:06 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int ac, char **av)
 	{
 		av++;
 		check_input(av, &stack_a);
+		check_how_many(&stack_a, &stack_b);
 	}
 	//free_node (stack_a); //free_node BESOIN de décommenter à la fin
 	return (0);
