@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:43:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 15:41:07 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 08:50:11 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,14 @@ void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
 		setup_rrr(stack_a, stack_b, cost_a, cost_b);
 	else if (cost_a > 0 && cost_b > 0)
 		setup_rr(stack_a, stack_b, cost_a, cost_b);
-	do_ra(stack_a, i);
-	do_rb(stack_b, i);
 	do_pa(stack_a, stack_b);
+	while (lstsize(*stack_b) > 0)
+	{
+		finding_all_pos(*stack_a, *stack_b);
+		find_target_pos(stack_a, stack_b);
+		find_cost(stack_a, stack_b);
+		find_cheapest_cost(stack_a, stack_b);
+	}
 }
 // ^ besoin de changer mes moves pour qu'il prenne un int et le int détermine
 // le nombre de fois à faire le move. Puis, je dois ajouter write(1, "ra", 2);
