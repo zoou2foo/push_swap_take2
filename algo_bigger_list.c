@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:20:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/12 14:18:10 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/13 15:54:18 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ void	move_almost_all_in_b(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 	int	cpt;
 	int	i;
+	int	median;
 
 	i = 0;
 	size = lstsize(*stack_a);
 	cpt = 0;
+	median = finding_median(stack_a);
 	while (cpt < size && lstsize(*stack_a) > 3)
 	{
-		if ((*stack_a)->index < finding_median(stack_a))
+		if ((*stack_a)->index < median)
 			do_pb(stack_a, stack_b);
 		else
 			do_ra(stack_a, i);
