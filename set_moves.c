@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_moves.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:43:49 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/12 14:27:24 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 19:53:36 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	plan_moves(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b)
 {
-	int	i;
-
-	i = 0;
 	if (cost_a < 0 && cost_b < 0)
 		setup_rrr(stack_a, stack_b, cost_a, cost_b);
 	else if (cost_a > 0 && cost_b > 0)

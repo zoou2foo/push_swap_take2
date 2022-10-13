@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 08:33:06 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/12 09:18:06 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/12 17:10:51 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	main(int ac, char **av)
 	{
 		av = ft_split(av[1], ' ');
 		check_input(av, &stack_a);
-		printf("1--------------\n");
 		check_how_many(&stack_a, &stack_b);
 		print_stack(&stack_a, &stack_b);
-		printf("2--------------\n");
 	}
 	if (ac > 2)
 	{
