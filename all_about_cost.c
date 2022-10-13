@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   all_about_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vjean <vjean@student.42.fr>                +#+  +:+       +#+        */
+/*   By: valeriejean <valeriejean@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:22:20 by vjean             #+#    #+#             */
-/*   Updated: 2022/10/11 13:44:29 by vjean            ###   ########.fr       */
+/*   Updated: 2022/10/13 08:12:15 by valeriejean      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,16 @@ void	find_cost(t_stack **stack_a, t_stack **stack_b)
 
 void	check_only_three_in_a(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack	*head_a;
+
+	head_a = *stack_a;
 	while (lstsize(*stack_a) > 3)
-		do_pb(stack_a, stack_b);
+	{
+		if (*stack_a == find_node_w_lower_index(*stack_a))
+			do_pb(stack_a, stack_b);
+		*stack_a = (*stack_a)->next;
+	}
+	*stack_a = head_a;
 }
 
 void	find_cheapest_cost(t_stack **stack_a, t_stack **stack_b)
